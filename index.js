@@ -91,6 +91,8 @@ var totalMonths = finances.length;
 var total = 0;
 var greatestIncreaseMonth = finances[1][0];
 var greatestIncreaseAmount = finances[1][1] - finances[0][1];
+var greatestDecreaseMonth = finances[1][0];
+var greatestDecreaseAmount = finances[1][1] - finances[0][1];
 
 for (var i = 0; i < totalMonths; i++) {
   total += finances[i][1];
@@ -108,6 +110,12 @@ for (var i = 0; i < totalMonths; i++) {
       greatestIncreaseAmount = change;
       greatestIncreaseMonth = finances[i][0];
     }
+
+    // Check for greatest decrease
+    if (change < greatestDecreaseAmount) {
+      greatestDecreaseAmount = change;
+      greatestDecreaseMonth = finances[i][0];
+    }
   }
 }
 
@@ -123,3 +131,4 @@ console.log("Total Months: " + totalMonths);
 console.log("Total: $" + total);
 console.log("Average Change: $" + averageChange.toFixed(2));
 console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseMonth + " ($" + greatestIncreaseAmount.toFixed(0) + ")");
+console.log("Greatest Decrease in Profits/Losses: " + greatestDecreaseMonth + " ($" + greatestDecreaseAmount.toFixed(0) + ")");
