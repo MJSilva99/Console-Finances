@@ -88,6 +88,11 @@ var finances = [
 ];
 
 var totalMonths = finances.length;
+var total = 0;
+
+for (var i = 0; i < totalMonths; i++) {
+  total += finances[i][1];
+}
 
 
 
@@ -98,3 +103,4 @@ var totalMonths = finances.length;
 
 
 console.log("Total Months: " + totalMonths);
+console.log("Total: $" + total);
