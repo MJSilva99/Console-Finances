@@ -119,6 +119,7 @@ for (var i = 0; i < totalMonths; i++) {
   }
 }
 
+// Calculate the average change
 var totalChange = 0;
 for (var i = 1; i < totalMonths; i++) {
   var previous = finances[i - 1][1];
@@ -127,6 +128,10 @@ for (var i = 1; i < totalMonths; i++) {
 }
 var averageChange = totalChange / (totalMonths - 1);
 
+
+//  Console log results
+console.log("Financial Analysis");
+console.log("------------------");
 console.log("Total Months: " + totalMonths);
 console.log("Total: $" + total);
 console.log("Average Change: $" + averageChange.toFixed(2));
