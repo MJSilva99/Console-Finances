@@ -94,13 +94,14 @@ for (var i = 0; i < totalMonths; i++) {
   total += finances[i][1];
 }
 
-
-
-
-
-
-
-
+var totalChange = 0;
+for (var i = 1; i < totalMonths; i++) {
+  var previous = finances[i - 1][1];
+  var currentMonth = finances[i][1];
+  totalChange += currentMonth - previous;
+}
+var averageChange = totalChange / (totalMonths - 1);
 
 console.log("Total Months: " + totalMonths);
 console.log("Total: $" + total);
+console.log("Average Change: $" + averageChange.toFixed(2));
